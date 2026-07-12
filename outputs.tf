@@ -1,3 +1,7 @@
+output "data_protection_backup_policy_data_lake_storages_id" {
+  description = "Map of id values across all data_protection_backup_policy_data_lake_storages, keyed the same as var.data_protection_backup_policy_data_lake_storages"
+  value       = { for k, v in azurerm_data_protection_backup_policy_data_lake_storage.data_protection_backup_policy_data_lake_storages : k => v.id }
+}
 output "data_protection_backup_policy_data_lake_storages_backup_schedule" {
   description = "Map of backup_schedule values across all data_protection_backup_policy_data_lake_storages, keyed the same as var.data_protection_backup_policy_data_lake_storages"
   value       = { for k, v in azurerm_data_protection_backup_policy_data_lake_storage.data_protection_backup_policy_data_lake_storages : k => v.backup_schedule }
