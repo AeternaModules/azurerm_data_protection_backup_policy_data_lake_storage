@@ -8,7 +8,7 @@ resource "azurerm_data_protection_backup_policy_data_lake_storage" "data_protect
   time_zone                       = each.value.time_zone
 
   dynamic "retention_rule" {
-    for_each = each.value.retention_rule != null ? [each.value.retention_rule] : []
+    for_each = each.value.retention_rule != null ? each.value.retention_rule : []
     content {
       absolute_criteria      = retention_rule.value.absolute_criteria
       days_of_week           = retention_rule.value.days_of_week
